@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Blog</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <strong>{{ post.title }}</strong><br>
+                <em>Publicado el {{ post.published_date }}</em><br>
+                <small>Por {{ post.author }}</small><br>
+                {{ post.text }}
+            </li>
+        {% empty %}
+            <li>No hay publicaciones todavía.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
